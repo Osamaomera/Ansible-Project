@@ -1,0 +1,24 @@
+---
+# tasks file for role-proj-db
+- name: install package
+  dnf: 
+    name: "{{ srv }}"
+    state: latest
+
+#- name: enable and start service
+#  service: 
+#    name: "{{ srv }}"
+#    state: started
+#    enabled: yes
+
+- name: ensure db server ports are open
+  firewalld:
+    port: "{{ n_port }}"
+    immediate: true
+    permanent: true
+    state: enabled
+
+- name: make motd
+  template:
+    src: motd.j2
+    dest: /etc/motd

@@ -1,0 +1,38 @@
+---
+# tasks file for role-proj
+- name: install package
+  dnf:
+    name:  "{{ srv }}"
+    state: latest 
+
+- name: enable and start service
+  service: 
+    name: "{{ srv }}"
+    state: started
+    enabled: yes
+
+- name: ensure web server ports are open
+  firewalld:
+    service: "{{ n_port }}"
+    state: enabled
+    immediate: true
+    permanent: true
+
+
+- name: copy index file
+  copy:
+    src: "{{ pub_file }}"
+    dest: /var/www/html/index.html
+    mode: 0644
+
+- name: T1 create user
+  user:
+   name: "{{ USER }}"
+   state: present
+   password: "{{ pass | password_hash('sha512') }}"  
+  notify: sendfiles
+
+- name: make motd
+  template:
+    src: motd.j2
+    dest: /etc/motd 

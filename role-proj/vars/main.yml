@@ -1,0 +1,9 @@
+---
+# vars file for role-proj
+USER: tabana
+olduser: ahmed
+srv: httpd
+n_port: http
+pub_file: index.html
+pkgs: httpd
+pass: ntinti

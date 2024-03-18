@@ -1,0 +1,7 @@
+---
+
+- name: install and configure webserver
+  hosts: dbserver
+  become: true
+  roles:
+    - role-proj-db

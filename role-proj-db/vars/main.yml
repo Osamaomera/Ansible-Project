@@ -1,0 +1,9 @@
+---
+# vars file for role-proj-db
+
+USER: omar
+olduser: ahmed
+srv: mariadb-server
+n_port: 3306/tcp
+pub_file: index.html
+pkgs: mariadb-server

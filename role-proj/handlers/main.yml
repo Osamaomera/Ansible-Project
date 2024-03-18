@@ -1,0 +1,11 @@
+---
+# handlers file for role-proj
+- name: sendfiles
+  copy:
+    src: files
+    dest: /home/anwar
+
+- name: printhi
+  file:
+    path: /home/anwar/hifile
+    state: touch
