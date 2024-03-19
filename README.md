@@ -21,4 +21,5 @@ Features:
 
 With this Ansible project, you can efficiently automate the setup and management of web and database servers, streamlining deployment processes and reducing manual intervention.
 
-[project-ansible.pdf](https://github.com/Osamaomera/Ansible-Project/files/14640524/project-ansible.pdf)
+
+[project-ansible-doc.pdf](https://github.com/Osamaomera/Ansible-Project/files/14646836/project-ansible-doc.pdf)
